@@ -20,7 +20,7 @@
  *
  * @since 1.0.0
  */
-class TwentyNineteen_SVG_Icons
+class mitema_SVG_Icons
 {
 
 	/**
