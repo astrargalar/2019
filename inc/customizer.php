@@ -1,9 +1,10 @@
 <?php
+
 /**
- * Twenty Nineteen: Customizer
+ * mitema: Customizer
  *
  * @package WordPress
- * @subpackage Twenty_Nineteen
+ * @subpackage mitema
  * @since 1.0.0
  */
 
@@ -12,24 +13,25 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function twentynineteen_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+function mitema_customize_register($wp_customize)
+{
+	$wp_customize->get_setting('blogname')->transport         = 'postMessage';
+	$wp_customize->get_setting('blogdescription')->transport  = 'postMessage';
+	$wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
 
-	if ( isset( $wp_customize->selective_refresh ) ) {
+	if (isset($wp_customize->selective_refresh)) {
 		$wp_customize->selective_refresh->add_partial(
 			'blogname',
 			array(
 				'selector'        => '.site-title a',
-				'render_callback' => 'twentynineteen_customize_partial_blogname',
+				'render_callback' => 'mitema_customize_partial_blogname',
 			)
 		);
 		$wp_customize->selective_refresh->add_partial(
 			'blogdescription',
 			array(
 				'selector'        => '.site-description',
-				'render_callback' => 'twentynineteen_customize_partial_blogdescription',
+				'render_callback' => 'mitema_customize_partial_blogdescription',
 			)
 		);
 	}
@@ -42,7 +44,7 @@ function twentynineteen_customize_register( $wp_customize ) {
 		array(
 			'default'           => 'default',
 			'transport'         => 'postMessage',
-			'sanitize_callback' => 'twentynineteen_sanitize_color_option',
+			'sanitize_callback' => 'mitema_sanitize_color_option',
 		)
 	);
 
@@ -50,10 +52,10 @@ function twentynineteen_customize_register( $wp_customize ) {
 		'primary_color',
 		array(
 			'type'     => 'radio',
-			'label'    => __( 'Primary Color', 'twentynineteen' ),
+			'label'    => __('Primary Color', 'mitema'),
 			'choices'  => array(
-				'default'  => _x( 'Default', 'primary color', 'twentynineteen' ),
-				'custom' => _x( 'Custom', 'primary color', 'twentynineteen' ),
+				'default'  => _x('Default', 'primary color', 'mitema'),
+				'custom' => _x('Custom', 'primary color', 'mitema'),
 			),
 			'section'  => 'colors',
 			'priority' => 5,
@@ -75,7 +77,7 @@ function twentynineteen_customize_register( $wp_customize ) {
 			$wp_customize,
 			'primary_color_hue',
 			array(
-				'description' => __( 'Apply a custom color for buttons, links, featured images, etc.', 'twentynineteen' ),
+				'description' => __('Apply a custom color for buttons, links, featured images, etc.', 'mitema'),
 				'section'     => 'colors',
 				'mode'        => 'hue',
 			)
@@ -95,21 +97,22 @@ function twentynineteen_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'image_filter',
 		array(
-			'label'   => __( 'Apply a filter to featured images using the primary color', 'twentynineteen' ),
+			'label'   => __('Apply a filter to featured images using the primary color', 'mitema'),
 			'section' => 'colors',
 			'type'    => 'checkbox',
 		)
 	);
 }
-add_action( 'customize_register', 'twentynineteen_customize_register' );
+add_action('customize_register', 'mitema_customize_register');
 
 /**
  * Render the site title for the selective refresh partial.
  *
  * @return void
  */
-function twentynineteen_customize_partial_blogname() {
-	bloginfo( 'name' );
+function mitema_customize_partial_blogname()
+{
+	bloginfo('name');
 }
 
 /**
@@ -117,25 +120,28 @@ function twentynineteen_customize_partial_blogname() {
  *
  * @return void
  */
-function twentynineteen_customize_partial_blogdescription() {
-	bloginfo( 'description' );
+function mitema_customize_partial_blogdescription()
+{
+	bloginfo('description');
 }
 
 /**
  * Bind JS handlers to instantly live-preview changes.
  */
-function twentynineteen_customize_preview_js() {
-	wp_enqueue_script( 'twentynineteen-customize-preview', get_theme_file_uri( '/js/customize-preview.js' ), array( 'customize-preview' ), '20181231', true );
+function mitema_customize_preview_js()
+{
+	wp_enqueue_script('mitema-customize-preview', get_theme_file_uri('/js/customize-preview.js'), array('customize-preview'), '20181231', true);
 }
-add_action( 'customize_preview_init', 'twentynineteen_customize_preview_js' );
+add_action('customize_preview_init', 'mitema_customize_preview_js');
 
 /**
  * Load dynamic logic for the customizer controls area.
  */
-function twentynineteen_panels_js() {
-	wp_enqueue_script( 'twentynineteen-customize-controls', get_theme_file_uri( '/js/customize-controls.js' ), array(), '20181231', true );
+function mitema_panels_js()
+{
+	wp_enqueue_script('mitema-customize-controls', get_theme_file_uri('/js/customize-controls.js'), array(), '20181231', true);
 }
-add_action( 'customize_controls_enqueue_scripts', 'twentynineteen_panels_js' );
+add_action('customize_controls_enqueue_scripts', 'mitema_panels_js');
 
 /**
  * Sanitize custom color choice.
@@ -144,13 +150,14 @@ add_action( 'customize_controls_enqueue_scripts', 'twentynineteen_panels_js' );
  *
  * @return string
  */
-function twentynineteen_sanitize_color_option( $choice ) {
+function mitema_sanitize_color_option($choice)
+{
 	$valid = array(
 		'default',
 		'custom',
 	);
 
-	if ( in_array( $choice, $valid, true ) ) {
+	if (in_array($choice, $valid, true)) {
 		return $choice;
 	}
 
