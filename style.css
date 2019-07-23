@@ -2121,9 +2121,9 @@ body.page .main-navigation {
 	.site-logo {
 		margin: 0;
 		min-width: 120px;
-		top: 50 %;
-		-ms: translateY(-50 %);
-		transform: translateY(-50 %);
+		top: 50%;
+		-ms: translateY(-50%);
+		transform: translateY(-50%);
 
 		/* margin-bottom: 0;
 		position: absolute;
