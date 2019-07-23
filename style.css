@@ -1457,8 +1457,8 @@ body.page .main-navigation {
 		margin-top: 0;
 		opacity: 1;
 		position: absolute;
-		left: 0;
-		right: auto;
+		left: auto;
+		right: 0;
 		top: auto;
 		bottom: auto;
 		height: auto;
@@ -1636,7 +1636,7 @@ body.page .main-navigation {
 /* Social menu */
 .social-navigation {
 	margin-top: calc(1rem / 2);
-	text-align: left;
+	text-align: right;
 }
 
 .social-navigation ul.social-links-menu {
@@ -2036,8 +2036,46 @@ body.page .main-navigation {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
+.grid-container {
+	height: 100%;
+	margin: 0;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: 120px 1fr 1fr;
+	grid-template-rows: 40px 40px;
+	grid-template-areas: "logo1 site nav" "logo1 site1 nav1";
+}
+
 .site-header {
 	padding: 1em;
+}
+
+.site-logo {
+	grid-area: logo1;
+	align-self: center;
+}
+
+.site-logo .custom-logo-link {
+	width: 100px !important;
+	height: 100px !important;
+}
+.site-title {
+	grid-area: site;
+	margin-left: 0 !important;
+}
+.site-description {
+	grid-area: site1;
+	margin-left: 0 !important;
+}
+.main-navigation {
+	grid-area: nav;
+	margin-right: 0 !important;
+}
+.social-links-menu {
+	grid-area: nav1;
+	margin-right: 0 !important;
 }
 
 .site-header.featured-image {
@@ -2074,18 +2112,24 @@ body.page .main-navigation {
 }
 
 .site-logo {
-	position: relative;
+	/* position: relative;
 	z-index: 999;
-	margin-bottom: calc(.66 * 1rem);
+	margin-bottom: calc(.66 * 1rem); */
 }
 
 @media only screen and (min-width: 768px) {
 	.site-logo {
-		margin-bottom: 0;
+		margin: 0;
+		min-width: 120px;
+		top: 50 %;
+		-ms: translateY(-50 %);
+		transform: translateY(-50 %);
+
+		/* margin-bottom: 0;
 		position: absolute;
 		right: calc(100% + (1.25 * 1rem));
 		top: 4px;
-		z-index: 999;
+		z-index: 999; */
 	}
 }
 
