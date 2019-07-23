@@ -2036,6 +2036,11 @@ body.page .main-navigation {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
+#masthead.site-header {
+	border-bottom: 2px solid brown;
+	max-height: 8rem !important;
+	background-color: #008ca1;
+}
 .grid-container {
 	height: 100%;
 	margin: 0;
@@ -2112,9 +2117,9 @@ body.page .main-navigation {
 }
 
 .site-logo {
-	/* position: relative;
+	position: relative;
 	z-index: 999;
-	margin-bottom: calc(.66 * 1rem); */
+	margin-bottom: calc(.66 * 1rem);
 }
 
 @media only screen and (min-width: 768px) {
@@ -2201,16 +2206,17 @@ body.page .main-navigation {
 	}
 }
 
-.site-title:not(:empty) + .site-description:not(:empty):before {
+/* .site-title:not(:empty) + .site-description:not(:empty):before {
 	content: "\2014";
 	margin: 0 .2em;
-}
+} */
 
 .site-description {
 	display: inline;
 	color: #767676;
 	font-weight: normal;
 	margin: 0;
+	color: brown;
 }
 
 .site-header.featured-image {
@@ -4781,4 +4787,8 @@ svg {
 
 .gallery-item > div > a:focus {
 	box-shadow: 0 0 0 2px #0073aa;
+}
+/* Puesto por mi */
+#site-navigation {
+	text-align: right !important;
 }
