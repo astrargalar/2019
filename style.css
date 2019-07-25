@@ -1696,6 +1696,23 @@ body.page .main-navigation {
 		margin-top: calc(1rem / 5);
 	}
 }
+/* @media only screen and(max-width: 767px) {
+	.site-title,
+	.site-description,
+	.main-navigation,
+	.nav-links,
+	.page-title,
+	.page-description,
+	.comment-author .fn,
+	.no-comments,
+	h2.author-title,
+	p.author-bio,
+	p.site-title,
+	p.site-description,
+	h4 {
+		font-size: 3vw !important;
+	}
+} */
 
 /** === Footer menu === */
 .footer-navigation {
@@ -2048,9 +2065,12 @@ body.page .main-navigation {
 
 .grid-container {
 	display: grid;
-	grid-template-columns: 120px 1fr 1fr;
+	/* grid-template-columns: 120px 1fr 1fr;
 	grid-template-rows: 40px 40px;
-	grid-template-areas: "logo1 site nav" "logo1 site1 nav1";
+	grid-template-areas: "logo1 site nav" "logo1 site1 nav1"; */
+	grid-template-columns: 1fr .2fr 1fr;
+	grid-template-rows: 40px 40px;
+	grid-template-areas: "site logo1 nav" " site1 logo1 nav1";
 }
 
 .site-header {
@@ -2157,7 +2177,7 @@ body.page .main-navigation {
 .site-logo .custom-logo-link:hover,
 .site-logo .custom-logo-link:active,
 .site-logo .custom-logo-link:focus {
-	box-shadow: 0 0 0 2px black;
+	box-shadow: 0 0 0 2px #0073aa;
 	color: transparent;
 }
 
@@ -4853,3 +4873,13 @@ a {
 	/* color: #cbcbc8;  lo hace gris*/
 	color: #a80000;
 }
+/* Remover los bordes del logo en hover */
+/* .site-logo .custom-logo-link:hover,
+.site-logo .custom-logo-link:active,
+.site-logo .custom-logo-link:focus {
+	box-shadow: none;
+} */
+/* Reducir espacio entre el header y el contenido */
+/* .site-header {
+	padding-bottom: 0;
+} */
