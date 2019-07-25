@@ -179,6 +179,15 @@ if (!function_exists('mitema_setup')) :
 	}
 endif;
 add_action('after_setup_theme', 'mitema_setup');
+//Agregar clase nav-link de boostrap al menu principal
+function mitema_enlace_class($atts, $item, $args)
+{
+	if ($args->theme_location == 'menu-1') {
+		$atts['class'] = "nav-link";
+	}
+	return $atts;
+}
+add_filter('nav_menu_link_attributes', 'mitema_enlace_class', 10, 3);
 
 /**
  * Register widget area.

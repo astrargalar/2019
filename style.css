@@ -4883,3 +4883,8 @@ a {
 /* .site-header {
 	padding-bottom: 0;
 } */
+/*  Resaltar la opción del menú seleccionada */
+.current-menu-item {
+	color: red;
+	border-bottom: 6px solid #a80000;
+}
