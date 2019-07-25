@@ -54,6 +54,8 @@ if (!function_exists('mitema_setup')) :
 		 */
 		add_theme_support('post-thumbnails');
 		set_post_thumbnail_size(1568, 9999);
+		add_theme_support('blog_img');
+		set_post_thumbnail_size(600, 600); //Creo un tamaño de imagen para el blog
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(
@@ -301,6 +303,7 @@ function mitema_colors_css_wrap()
 <?php
 }
 add_action('wp_head', 'mitema_colors_css_wrap');
+
 
 /**
  * SVG Icons class.

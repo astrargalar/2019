@@ -23,10 +23,10 @@
 		<?php if (!empty($blog_info)) : ?>
 			<a class="site-name" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>,
 		<?php endif; ?>
-		<a href="<?php echo esc_url(__('https://wordpress.org/', 'mitema')); ?>" class="imprint">
+		<a href="<?php echo esc_url(__('https://pacosilva.com/', 'mitema')); ?>" class="imprint">
 			<?php
 			/* translators: %s: WordPress. */
-			printf(__('Proudly powered by %s.', 'mitema'), 'WordPress');
+			printf(__('        Hecho con mucho esfuerzo por %s.', 'mitema'), 'Paco Silva');
 			?>
 		</a>
 		<?php

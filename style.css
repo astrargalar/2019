@@ -1635,7 +1635,7 @@ body.page .main-navigation {
 
 /* Social menu */
 .social-navigation {
-	margin-top: calc(1rem / 2);
+	/* margin-top: calc(1rem / 2); */
 	text-align: right;
 }
 
@@ -2039,7 +2039,7 @@ body.page .main-navigation {
 #masthead.site-header {
 	border-bottom: 2px solid brown;
 	max-height: 8rem !important;
-	background-color: #008ca1;
+	/* background-color: #008ca1; */
 }
 .grid-container {
 	height: 100%;
@@ -2097,7 +2097,8 @@ body.page .main-navigation {
 @media only screen and (min-width: 768px) {
 	.site-header {
 		margin: 0;
-		padding: 3rem 0;
+		/* padding: 3rem 0; */
+		padding: 1rem 0 .5rem 0;
 	}
 	.site-header.featured-image {
 		min-height: 100vh;
@@ -2157,6 +2158,7 @@ body.page .main-navigation {
 .site-logo .custom-logo-link:active,
 .site-logo .custom-logo-link:focus {
 	box-shadow: 0 0 0 2px black;
+	color: transparent;
 }
 
 @media only screen and (min-width: 768px) {
@@ -4788,7 +4790,66 @@ svg {
 .gallery-item > div > a:focus {
 	box-shadow: 0 0 0 2px #0073aa;
 }
-/* Puesto por mi */
+/********************************************************************************************
+************************************* Puesto por mi **************************************** 
+*********************************************************************************************/
 #site-navigation {
 	text-align: right !important;
+}
+/* Espacio entre  opciones de menu */
+.main-navigation .main-menu > li > a {
+	margin-right: 1.5rem;
+}
+/* Elima el subrayado de todos los enlace excepto los principales */
+/* Place this in your template CSS file or Theme CSS Editor */
+
+a {
+	text-decoration: none !important;
+}
+
+.entry .entry-content a {
+	text-decoration: underline !important;
+}
+/* Controla el fondo de la imagen y puede cambiar la opacidad para hacer que la imagen sea más brillante */
+.site-header.featured-image:after {
+	opacity: 0.35 !important;
+	background: none;
+}
+#masthead.site-header {
+	border-bottom: 2px solid brown;
+	max-height: 8rem !important;
+	/* background-color: #008ca1; */
+}
+.site-logo {
+	/* top: 40px; */
+	right: auto;
+}
+/*  Quitar fondo blanco al logo */
+.site-header.featured-image .custom-logo-link {
+	background: none;
+}
+/* Cambiar el tamaño de los h2 a resoluciones altas */
+@media only screen and(min-width: 768px) {
+	.entry-title,
+	.not-found .page-title,
+	.error-404 .page-title,
+	.has-larger-font-size,
+	h2 {
+		font-size: 2.25em;
+	}
+}
+/*  Mostramos las opciones del meú móvil centradas */
+.main-navigation .sub-menu > li > a,
+.main-navigation .sub-menu > li > .menu-item-link-return {
+	text-align: center;
+}
+/* Esto es para el hover de los elementos del menú móvil pero NO FUNCIONA de momento */
+.menu-item-type-post_type > li > a:hover {
+	text-decoration: underline !important;
+	color: red;
+}
+/* Cambiar los colores de los enlaces sociales */
+.social-navigation .menu-item svg {
+	/* color: #cbcbc8;  lo hace gris*/
+	color: #a80000;
 }
