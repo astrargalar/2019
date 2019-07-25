@@ -3435,7 +3435,8 @@ body.page .main-navigation {
 
 #colophon .widget-column {
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
+	/* flex-wrap : wrap; */
 }
 
 #colophon .widget-column .widget {
@@ -3451,6 +3452,7 @@ body.page .main-navigation {
 
 #colophon .site-info {
 	color: #767676;
+	margin-top: 0;
 }
 
 #colophon .site-info a {
@@ -4887,4 +4889,26 @@ a {
 .current-menu-item {
 	color: red;
 	border-bottom: 6px solid #a80000;
+}
+.content-area {
+	width: 80%;
+	margin: 0 auto;
+}
+.container-footer {
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+}
+.site-info {
+	/* display: inline-block !important; */
+	width: 100wh;
+	border-top: 2px solid #820000;
+}
+aside.widget-area {
+	min-width: 80%;
+	padding: 0;
+	margin-bottom: 0 !important;
+}
+#menu-menu-secundario.footer-menu {
+	padding: 0;
 }
